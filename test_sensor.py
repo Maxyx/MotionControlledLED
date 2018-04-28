@@ -1,6 +1,6 @@
 import unittest
 from fake_io_handler import FakeIOHandler
-from sensor import Sensor
+from sensors import Sensor
 
 
 class SensorTests(unittest.TestCase):
