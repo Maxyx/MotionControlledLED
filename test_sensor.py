@@ -13,8 +13,9 @@ class SensorTests(unittest.TestCase):
 
     def test_pin_level_is_high(self):
         io_handler = FakeIOHandler()
-        io_handler.set_output_pin_level_to_high(self._sensor_input_pin)
-        self.assertTrue(Sensor(io_handler, self._sensor_input_pin).is_pin_level_high())
+        sensor = Sensor(io_handler, self._sensor_input_pin)
+        io_handler.simulate_input_pin_level_high(self._sensor_input_pin)
+        self.assertTrue(sensor.is_pin_level_high())
 
 
 if __name__ == '__main__':

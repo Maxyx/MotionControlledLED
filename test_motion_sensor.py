@@ -11,8 +11,9 @@ class MotionSensorTests(unittest.TestCase):
 
     def test_motion_detected_when_pin_level_high(self):
         fake_io_handler = FakeIOHandler()
-        fake_io_handler.set_output_pin_level_to_high(self._sensor_input_pin)
-        self.assertTrue(MotionSensor(fake_io_handler, self._sensor_input_pin).is_motion_detected())
+        motion_sensor = MotionSensor(fake_io_handler, self._sensor_input_pin)
+        fake_io_handler.simulate_input_pin_level_high(self._sensor_input_pin)
+        self.assertTrue(motion_sensor.is_motion_detected())
 
 
 if __name__ == '__main__':
