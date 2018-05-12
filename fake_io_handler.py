@@ -1,7 +1,7 @@
 class FakeIOHandler:
     def __init__(self):
         self._inputPins = []
-        self._ouputPins = []
+        self._outputPins = []
         self._pin_with_level_high = []
 
     def set_pin_as_input(self, pin_index):
@@ -32,7 +32,7 @@ class FakeIOHandler:
             raise ValueError
 
     def set_pin_as_output(self, pin_index):
-        self._ouputPins.append(pin_index)
+        self._outputPins.append(pin_index)
 
     def is_an_output_pin(self, pin_index):
-        return pin_index in self._ouputPins
+        return pin_index in self._outputPins
