@@ -2,9 +2,6 @@ import RPi.GPIO as GPIO
 
 
 class PiIOHandler:
-    _HIGH = 1
-    _LOW = 0
-
     def __init__(self):
         self._inputPins = []
         self._outputPins = []
@@ -33,13 +30,13 @@ class PiIOHandler:
 
     def set_output_pin_level_to_high(self, pin_index):
         if self.is_an_output_pin(pin_index):
-            GPIO.output(pin_index, self._HIGH)
+            GPIO.output(pin_index, GPIO.HIGH)
         else:
             raise ValueError
 
     def set_output_pin_level_to_low(self, pin_index):
         if self.is_an_output_pin(pin_index):
-            GPIO.output(pin_index, self._LOW)
+            GPIO.output(pin_index, GPIO.LOW)
         else:
             raise ValueError
 
