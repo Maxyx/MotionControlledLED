@@ -10,7 +10,7 @@ class LEDTests(unittest.TestCase):
     def test_pin_assigned_to_LED_set_as_output(self):
         io_handler = FakeIOHandler()
         LED(io_handler, self._led_pin)
-        self.assertTrue(io_handler.is_an_output_pin(self._led_pin))
+        self.assertTrue(io_handler.is_output_pin(self._led_pin))
 
     def test_pin_level_high_when_turning_led_on(self):
         io_handler = FakeIOHandler()
